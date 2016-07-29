@@ -14,9 +14,20 @@ import {
 } from 'react-native';
 
 class Greeting extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { showText: true };
+
+    //每隔1000毫秒对showText做一次取反操作
+    setInterval(() => {
+      this.setState({ showText: !this.state.showText });
+    }, 1000);
+  }
   render() {
+    //根据当前showText的值决定是否显示text内容
+    let display = this.state.showText ? this.props.text : ' ';
     return (
-      <Text> Hello {this.props.name} </Text>
+      <Text>{display}</Text>
     );
   }
 }
@@ -24,10 +35,10 @@ class Greeting extends Component {
 class RN_text extends Component {
   render() {
     return (
-      <View style={{alignItems: 'center'}}>
-        <Greeting name='aaaa'/>
-        <Greeting name='bbbb'/>
-        <Greeting name='cccc'/>
+      <View>
+        <Greeting text='I have a dream'/>
+        <Greeting text='I am a very good'/>
+        <Greeting text='Look at me' />
       </View>
     );
   }
