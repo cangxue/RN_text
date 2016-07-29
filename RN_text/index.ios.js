@@ -11,7 +11,8 @@ import {
   Image,
   Text,
   TextInput,
-  View
+  View,
+  ScrollView,
 } from 'react-native';
 
 class RN_text extends Component {
@@ -21,16 +22,24 @@ class RN_text extends Component {
   }
   render() {
     return (
-      <View style={{padding: 10}}>
-        <TextInput
-          style={{height: 40}}
-          placeholder="请输入文字"
-          onChangeText={(text) => this.setState({text})}
-        />
-        <Text style={{padding: 10, fontSize: 42}}>
-          {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
-        </Text>
+      <ScrollView>
+      <View style={{padding: 10, height: 100, backgroundColor: 'skyblue'}}>
       </View>
+      <View style={{padding: 10, height: 100, backgroundColor: 'steelblue'}}>
+      </View>
+      <View style={{padding: 10, height: 100, backgroundColor: 'skyblue'}}>
+      </View>
+      <View style={{padding: 10, height: 100, backgroundColor: 'steelblue'}}>
+      </View>
+      <View style={{padding: 10, height: 100, backgroundColor: 'skyblue'}}>
+      </View>
+      <View style={{padding: 10, height: 100, backgroundColor: 'steelblue'}}>
+      </View>
+      <View style={{padding: 10, height: 100, backgroundColor: 'skyblue'}}>
+      </View>
+      <View style={{padding: 10, height: 100, backgroundColor: 'steelblue'}}>
+      </View>
+      </ScrollView>
     );
   }
 }
