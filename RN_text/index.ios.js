@@ -16,10 +16,30 @@ import {
 class RN_text extends Component {
   render() {
     return (
-      <View style={{width:200, height: 300}} >
-        <View style={{flex: 1, backgroundColor: 'powderblue'}} />
-        <View style={{flex: 2, backgroundColor: 'skyblue'}} />
-        <View style={{flex: 3, backgroundColor: 'steelblue'}} />
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+        <View style={{
+          flex: 1,
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+        }} >
+          <View style={{flex: 1, backgroundColor: 'steelblue'}} />
+          <View style={{flex: 2, backgroundColor: 'powderblue'}} />
+          <View style={{flex: 3, backgroundColor: 'skyblue'}} />
+        </View>
+        <View style={{
+          flex: 1,
+          flexDirection: 'row',
+          justifyContent: 'center'
+        }} >
+          <View style={{flex: 1, backgroundColor: 'powderblue'}} />
+          <View style={{flex: 2, backgroundColor: 'skyblue'}} />
+          <View style={{flex: 3, backgroundColor: 'steelblue'}} />
+        </View>
       </View>
     );
   }
