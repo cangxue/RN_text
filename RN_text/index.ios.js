@@ -13,33 +13,28 @@ import {
   TextInput,
   View,
   ScrollView,
+  ListView
 } from 'react-native';
 
 class RN_text extends Component {
+  //初始化伪数据
   constructor(props) {
     super(props);
-    this.state = {text: ''};
+    const ds = new ListView.DataSource({rowHasChanged:(r1, r2) => r1 !== r2});
+    this.state = {
+      dataSource: ds.cloneWithRows([
+        'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
+      ])
+    };
   }
   render() {
     return (
-      <ScrollView>
-      <View style={{padding: 10, height: 100, backgroundColor: 'skyblue'}}>
+      <View style={{paddingTop: 22}}>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={(rowData) => <Text>{rowData}</Text>}
+        />
       </View>
-      <View style={{padding: 10, height: 100, backgroundColor: 'steelblue'}}>
-      </View>
-      <View style={{padding: 10, height: 100, backgroundColor: 'skyblue'}}>
-      </View>
-      <View style={{padding: 10, height: 100, backgroundColor: 'steelblue'}}>
-      </View>
-      <View style={{padding: 10, height: 100, backgroundColor: 'skyblue'}}>
-      </View>
-      <View style={{padding: 10, height: 100, backgroundColor: 'steelblue'}}>
-      </View>
-      <View style={{padding: 10, height: 100, backgroundColor: 'skyblue'}}>
-      </View>
-      <View style={{padding: 10, height: 100, backgroundColor: 'steelblue'}}>
-      </View>
-      </ScrollView>
     );
   }
 }
