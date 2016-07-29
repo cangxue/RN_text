@@ -8,13 +8,17 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
+  Image,
   Text
 } from 'react-native';
 
 class RN_text extends Component {
   render() {
+    let pic = {
+      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
+    };
     return (
-      <Text> Hello world </Text>
+      <Image source={pic} style={{width: 193, height: 110}} />
     );
   }
 }
