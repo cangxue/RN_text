@@ -9,16 +9,26 @@ import {
   AppRegistry,
   StyleSheet,
   Image,
-  Text
+  Text,
+  View
 } from 'react-native';
+
+class Greeting extends Component {
+  render() {
+    return (
+      <Text> Hello {this.props.name} </Text>
+    );
+  }
+}
 
 class RN_text extends Component {
   render() {
-    let pic = {
-      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
-    };
     return (
-      <Image source={pic} style={{width: 193, height: 110}} />
+      <View style={{alignItems: 'center'}}>
+        <Greeting name='aaaa'/>
+        <Greeting name='bbbb'/>
+        <Greeting name='cccc'/>
+      </View>
     );
   }
 }
