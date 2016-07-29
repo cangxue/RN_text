@@ -1,2 +1,3 @@
 # RN_text
-react-native
+react-native 学习笔记
+1、
