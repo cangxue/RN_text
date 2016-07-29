@@ -13,32 +13,13 @@ import {
   View
 } from 'react-native';
 
-class Greeting extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { showText: true };
-
-    //每隔1000毫秒对showText做一次取反操作
-    setInterval(() => {
-      this.setState({ showText: !this.state.showText });
-    }, 1000);
-  }
-  render() {
-    //根据当前showText的值决定是否显示text内容
-    let display = this.state.showText ? this.props.text : ' ';
-    return (
-      <Text>{display}</Text>
-    );
-  }
-}
-
 class RN_text extends Component {
   render() {
     return (
-      <View>
-        <Greeting text='I have a dream'/>
-        <Greeting text='I am a very good'/>
-        <Greeting text='Look at me' />
+      <View style={{width:200, height: 300}} >
+        <View style={{flex: 1, backgroundColor: 'powderblue'}} />
+        <View style={{flex: 2, backgroundColor: 'skyblue'}} />
+        <View style={{flex: 3, backgroundColor: 'steelblue'}} />
       </View>
     );
   }
